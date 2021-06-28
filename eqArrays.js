@@ -1,19 +1,20 @@
-const assertEqual = function(actual, expected) {
-  if (actual === expected) {
-    console.log(`👍🏼 Assertion Passed: ${actual} === ${expected}`);
-    return true;
+// const assertEqual = function(actual, expected) {
+//   if (actual === expected) {
+//     console.log(`👍🏼 Assertion Passed: ${actual} === ${expected}`);
+//     return true;
 
-  } else if (actual !== expected) {
-    console.log(`👎🏼 😥 Assertion Failed: ${actual} !== ${expected}`);
-    return false;
-  }
-};
+//   } else if (actual !== expected) {
+//     console.log(`👎🏼 😥 Assertion Failed: ${actual} !== ${expected}`);
+//     return false;
+//   }
+// };
 
 //forEach loops through the entire array without stopping
 // it does not return a new array automatically but we can create an empty array and push to it
 // forEach is a higher order function it takes an anonymous callback function that takes arguments
 // the first argument is require 'item' and it refers to the current item being processed in the array 
 // the second argument is optional and it refers to the index which is a number on the first loop it will be 0 then 1 then 2 and so on
+const assertEqual = require('./assertEqual')
 
 const eqArrays = function(array1, array2){
 let array = [];
@@ -48,3 +49,5 @@ const assertArraysEqual = function(eqArrayscb, expected){
 }
 
 console.log(assertArraysEqual(eqArrays([1, 2, 3], [1, 2, 3],), true));
+
+module.exports = eqArrays;
