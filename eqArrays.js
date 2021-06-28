@@ -36,4 +36,15 @@ let array = [];
 
 // console.log(eqArrays([1, 2, 3], [1, 2, 3]));
 
-console.log(assertEqual(eqArrays([1, 2, 5], [1, 2, 3]), true)); 
+// console.log(assertEqual(eqArrays([1, 2, 5], [1, 2, 3]), true)); 
+
+const assertArraysEqual = function(eqArrayscb, expected){
+  if (eqArrayscb === expected) {
+    console.log(`👍🏼 Assertion Passed: ${eqArrayscb} === ${expected}`);
+
+  } else if (eqArrayscb !== expected) {
+    console.log(`👎🏼 😥 Assertion Failed: ${eqArrayscb} !== ${expected}`);
+  }
+}
+
+console.log(assertArraysEqual(eqArrays([1, 2, 3], [1, 2, 3],), true));

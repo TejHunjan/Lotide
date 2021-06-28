@@ -7,11 +7,16 @@ const assertEqual = function(actual, expected) {
   }
 };
 
-assertEqual("Lighthouse Labs", "Bootcamp");
-assertEqual(1, 1);
-assertEqual('minus 5', -5)
-assertEqual('happy', 'Happy')
-assertEqual(9, 3)
-assertEqual('yes', 'yes')
+const letterPositions = function(sentence){
 
-module.exports = assertEqual;
+  const results = {};
+  const array = sentence.split('');
+  for(let i = 0; i < array.length; i++){
+
+    results[array[i]] = i;
+
+  }
+  return results;
+}
+
+console.log(letterPositions('hello'));
