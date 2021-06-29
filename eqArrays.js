@@ -14,7 +14,8 @@
 // forEach is a higher order function it takes an anonymous callback function that takes arguments
 // the first argument is require 'item' and it refers to the current item being processed in the array 
 // the second argument is optional and it refers to the index which is a number on the first loop it will be 0 then 1 then 2 and so on
-const assertEqual = require('./assertEqual')
+
+// const assertEqual = require('./assertEqual')
 
 const eqArrays = function(array1, array2){
 let array = [];
@@ -26,7 +27,7 @@ let array = [];
       array.push(false);
     } 
   })
-  //includes looks for if the arg you pass into it exists anywhere in the array
+  //includes checks if the arg you pass into it exists anywhere in the array
   if(array.includes(false)){
     return false;
   }else{
@@ -35,19 +36,34 @@ let array = [];
 }
 
 
-// console.log(eqArrays([1, 2, 3], [1, 2, 3]));
+// const assertArrayEqual = function(array1, array2) {
+
+//   if (eqArrays(array1, array2)) {
+//     console.log('Pass');
+//   } else {
+//     console.log('Fail');
+//   }
+    
+// };
+
+
+
+// assertArrayEqual([1, 2, 3], [1, 2, 3]);
+
+module.exports = eqArrays;
 
 // console.log(assertEqual(eqArrays([1, 2, 5], [1, 2, 3]), true)); 
 
-const assertArraysEqual = function(eqArrayscb, expected){
-  if (eqArrayscb === expected) {
-    console.log(`👍🏼 Assertion Passed: ${eqArrayscb} === ${expected}`);
+// const assertArraysEqual = function(eqArrayscb, expected){
+//   if (eqArrayscb === expected) {
+//     console.log(`👍🏼 Assertion Passed: ${eqArrayscb} === ${expected}`);
 
-  } else if (eqArrayscb !== expected) {
-    console.log(`👎🏼 😥 Assertion Failed: ${eqArrayscb} !== ${expected}`);
-  }
-}
+//   } else if (eqArrayscb !== expected) {
+//     console.log(`👎🏼 😥 Assertion Failed: ${eqArrayscb} !== ${expected}`);
+//   }
+// }
 
-console.log(assertArraysEqual(eqArrays([1, 2, 3], [1, 2, 3],), true));
 
-module.exports = eqArrays;
+// console.log(assertArraysEqual(eqArrays([1, 2, 3], [1, 2, 3],), true));
+
+// module.exports = eqArrays;
